@@ -10,6 +10,14 @@ import javax.persistence.Id;
 @Entity(name="SousCategorie")
 public class SousCategorie {
 
+    @Id
+    @Column(name="idSousCat")
+    private int idSousCat;
+
+    @Column(name="nom")
+    private String nom;
+
+
     public int getIdSousCat() {
         return idSousCat;
     }
@@ -26,10 +34,5 @@ public class SousCategorie {
         this.nom = nom;
     }
 
-    @Id
-    @Column(name="idSousCat")
-    private int idSousCat;
 
-    @Column(name="nom")
-    private String nom;
 }

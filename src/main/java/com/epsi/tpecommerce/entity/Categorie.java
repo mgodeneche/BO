@@ -11,6 +11,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Categorie")
 public class Categorie {
+    @Id
+    @Column(name="idCat")
+    private int idCat;
+
+    @Column(name="nom")
+    private String nom;
+
 
     public int getIdCat() {
         return idCat;
@@ -28,12 +35,7 @@ public class Categorie {
         this.nom = nom;
     }
 
-    @Id
-    @Column(name="idCat")
-    private int idCat;
 
-    @Column(name="nom")
-    private String nom;
 
 
 
