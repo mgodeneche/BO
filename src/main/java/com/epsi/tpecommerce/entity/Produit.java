@@ -34,6 +34,7 @@ public class Produit {
     private int qteStock;
 
 
+
     public int getIdProduit() {
         return idProduit;
     }
