@@ -5,6 +5,10 @@ ehthumbs.db
 #INTELLIJidea
 .idea
 workspace.xml
+.idea/workspace.xml
+
+#Eclipse
+.classpath
 
 # Folder config file
 Desktop.ini
