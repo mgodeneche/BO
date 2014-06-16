@@ -24,8 +24,6 @@ public class Client {
     @Column(name="email", nullable=false, length=250)
     private String email;
 
-    @Column(name="email", nullable=false, length=250)
-    private String email;
 
     public String getEmail() {
         return email;
