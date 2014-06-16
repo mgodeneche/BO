@@ -3,12 +3,12 @@ package com.epsi.tpecommerce.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 import java.util.Calendar;
 
-/**
- * Created by maxencegodeneche on 16/06/2014.
- */
 @Entity
+@Table(name="HistoriqueStatueCmd")
 public class HistoriqueStatutCmd {
     @Id
     @Column(name="idHistoStatutCmd")
@@ -18,7 +18,7 @@ public class HistoriqueStatutCmd {
     private Calendar dateStatut;
 
     @Column(name="IdStatutCmd")
-    private Statut statut;
+    private StatutCmd statut;
 
     public int getIdHistoStatutCmd() {
         return idHistoStatutCmd;
@@ -36,11 +36,11 @@ public class HistoriqueStatutCmd {
         this.dateStatut = dateStatut;
     }
 
-    public Statut getStatut() {
+    public StatutCmd getStatut() {
         return statut;
     }
 
-    public void setStatut(Statut statut) {
+    public void setStatut(StatutCmd statut) {
         this.statut = statut;
     }
 }

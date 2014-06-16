@@ -3,13 +3,9 @@ package com.epsi.tpecommerce.entity;
 import javax.persistence.*;
 import java.util.Calendar;
 
-/**
- * Created by maxencegodeneche on 16/06/2014.
- */
 @Entity
 @Table(name="CATALOGUE ")
 public class Catalogue {
-    @Id
     @Column(name="idCatalogue")
     private int idCatalogue;
 

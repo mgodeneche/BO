@@ -3,11 +3,10 @@ package com.epsi.tpecommerce.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-/**
- * Created by maxencegodeneche on 16/06/2014.
- */
-@Entity(name="prix")
+@Entity
+@Table(name="prix")
 public class Prix {
 
     @Id

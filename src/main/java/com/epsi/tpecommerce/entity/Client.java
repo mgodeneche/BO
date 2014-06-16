@@ -1,8 +1,5 @@
 package com.epsi.tpecommerce.entity;
 
-/**
- * Created by Maxence on 04/06/2014.
- */
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;

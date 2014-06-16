@@ -3,8 +3,10 @@ package com.epsi.tpecommerce.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="Fournisseur")
+@Entity
+@Table(name="Fournisseur")
 public class Fournisseur {
 
     @Id

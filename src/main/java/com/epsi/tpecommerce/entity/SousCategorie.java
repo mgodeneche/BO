@@ -5,9 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
-@Entity(name="SousCategorie")
+@Entity
+@Table(name="SousCategorie")
 public class SousCategorie {
 
     @Id

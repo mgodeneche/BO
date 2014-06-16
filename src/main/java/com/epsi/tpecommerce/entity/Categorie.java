@@ -5,9 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * Created by maxencegodeneche on 16/06/2014.
- */
 @Entity
 @Table(name="Categorie")
 public class Categorie {
