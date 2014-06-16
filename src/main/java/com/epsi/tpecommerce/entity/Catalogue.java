@@ -16,9 +16,11 @@ public class Catalogue {
     @Column(name="nom")
     private String nom;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="DateDebut")
     private Calendar dateDebut;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="DateFin")
     private Calendar dateFin;
 

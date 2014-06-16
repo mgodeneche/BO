@@ -4,10 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Created by maxencegodeneche on 16/06/2014.
- */
-@Entity(name="Fournisseurs")
+@Entity(name="Fournisseur")
 public class Fournisseur {
 
     @Id

@@ -1,9 +1,8 @@
 package com.epsi.tpecommerce.entity;
 
-/**
- * Created by Maxence on 04/06/2014.
- */
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.Column;
@@ -15,14 +14,17 @@ public class Produit {
     @Column(name="idProduit")
     private int idProduit;
 
-    @Column(name="idFournisseur",nullable=false)
-    private int idFournisseur;
+    @ManyToOne
+    @JoinColumn(name="fournisseur", referencedColumnName="idFournisseur")
+    private Fournisseur fournisseur;
 
-    @Column(name="idTva",nullable=false)
-    private int idTva;
+    @ManyToOne
+    @JoinColumn(name="tva", referencedColumnName="idTva")
+    private Tva tva;
 
-    @Column(name="idSousCategorie",nullable=false)
-    private String idSousCategorie;
+    @ManyToOne
+    @JoinColumn(name="sousCategorie", referencedColumnName="idSousCat")
+    private SousCategorie sousCategorie;
 
     @Column(name="nom",nullable=false,length = 50)
     private String nom;
@@ -39,32 +41,32 @@ public class Produit {
         return idProduit;
     }
 
-    public void setIdProduit(int idProduit) {
-        this.idProduit = idProduit;
+    public void setIdProduit(int p_idProduit) {
+        idProduit = p_idProduit;
     }
 
-    public int getIdFournisseur() {
-        return idFournisseur;
+    public Fournisseur getFournisseur() {
+        return fournisseur;
     }
 
-    public void setIdFournisseur(int idFournisseur) {
-        this.idFournisseur = idFournisseur;
+    public void setFournisseur(Fournisseur p_fournisseur) {
+        fournisseur = p_fournisseur;
     }
 
-    public int getIdTva() {
-        return idTva;
+    public Tva getTva() {
+        return tva;
     }
 
-    public void setIdTva(int idTva) {
-        this.idTva = idTva;
+    public void setTva(Tva p_tva) {
+        tva = p_tva;
     }
 
-    public String getIdSousCategorie() {
-        return idSousCategorie;
+    public SousCategorie getSousCategorie() {
+        return sousCategorie;
     }
 
-    public void setIdSousCategorie(String idSousCategorie) {
-        this.idSousCategorie = idSousCategorie;
+    public void setSousCategorie(SousCategorie p_sousCat) {
+        sousCategorie = p_sousCat;
     }
 
     public String getNom() {

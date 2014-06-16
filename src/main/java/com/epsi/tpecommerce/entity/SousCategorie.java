@@ -3,10 +3,10 @@ package com.epsi.tpecommerce.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-/**
- * Created by maxencegodeneche on 16/06/2014.
- */
+
 @Entity(name="SousCategorie")
 public class SousCategorie {
 
@@ -16,7 +16,10 @@ public class SousCategorie {
 
     @Column(name="nom")
     private String nom;
-
+    
+    @ManyToOne
+    @JoinColumn(name="Categorie", referencedColumnName="idCat")
+    private Categorie categorie;
 
     public int getIdSousCat() {
         return idSousCat;
@@ -34,5 +37,11 @@ public class SousCategorie {
         this.nom = nom;
     }
 
-
+    public Categorie getCategorie() {
+    	return categorie;
+    }
+    
+    public void setCategorie(Categorie p_categorie) {
+    	categorie = p_categorie;
+    }
 }
