@@ -11,7 +11,7 @@ public class Fournisseur {
 
     @Id
     @Column(name="idFournisseur")
-    private int idFournissur;
+    private int idFournisseur;
 
     @Column(name="nom")
     private String nom;
@@ -19,12 +19,12 @@ public class Fournisseur {
     @Column(name="email")
     private String email;
 
-    public int getIdFournissur() {
-        return idFournissur;
+    public int getIdFournisseur() {
+        return idFournisseur;
     }
 
-    public void setIdFournissur(int idFournissur) {
-        this.idFournissur = idFournissur;
+    public void setIdFournissur(int idFournisseur) {
+        this.idFournisseur = idFournisseur;
     }
 
     public String getNom() {
