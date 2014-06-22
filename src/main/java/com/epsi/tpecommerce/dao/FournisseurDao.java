@@ -4,9 +4,6 @@ import com.epsi.tpecommerce.entity.Fournisseur;
 import com.epsi.tpecommerce.entity.User;
 import org.hibernate.Query;
 
-/**
- * Created by maxencegodeneche on 16/06/2014.
- */
 public class FournisseurDao extends AbstractDao<Fournisseur,Integer> {
 
     public FournisseurDao() {super(); }
@@ -15,15 +12,16 @@ public class FournisseurDao extends AbstractDao<Fournisseur,Integer> {
         return this.find(Fournisseur.class, id);
     }
 
-    public Fournisseur findByEmail(String email) {
-        this.session.beginTransaction();
-        String queryString = "from Fournisseur where email = :email";
-        Query query = this.session.createQuery(queryString);
-        query.setString("email", email);
-        Object queryResult = query.uniqueResult();
-        Fournisseur fournisseur = (Fournisseur)queryResult;
-        this.session.getTransaction().commit();
-        return fournisseur;
+    public void addFournisseur(Fournisseur p_fournisseur){
+    	this.session.beginTransaction();
+    	
+    	int exRows = this.session.createSQLQuery(
+    			"CALL ADDFOURNISSEUR(:nom, :email)")
+    			.setString("nom", p_fournisseur.getNom())
+    			.setString(":email", p_fournisseur.getEmail())
+    			.executeUpdate();
+    	
+    	this.session.getTransaction().commit();
     }
 
 }

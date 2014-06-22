@@ -17,12 +17,8 @@ public class Commande {
     private int idCommande;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="dateDebut")
-    private Calendar dateDebut;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="dateFin")
-    private Calendar dateFin;
+    @Column(name="dateCommande")
+    private Calendar dateCommande;
 
     @Column(name="Qte")
     private int qte;
@@ -31,9 +27,6 @@ public class Commande {
     @JoinColumn(name="Client", referencedColumnName="idClient")
     private Client client;
     
-    @ManyToOne
-    @JoinColumn(name="HistoriqueStatutCmd", referencedColumnName="idHistoStatutCmd")
-    private HistoriqueStatutCmd historiqueStatutCmd;
     
     @ManyToOne
     @JoinColumn(name="Produit", referencedColumnName="idProduit")
@@ -47,20 +40,12 @@ public class Commande {
 		this.idCommande = idCommande;
 	}
 
-	public Calendar getDateDebut() {
-		return dateDebut;
+	public Calendar getDateCommande() {
+		return dateCommande;
 	}
 
-	public void setDateDebut(Calendar dateDebut) {
-		this.dateDebut = dateDebut;
-	}
-
-	public Calendar getDateFin() {
-		return dateFin;
-	}
-
-	public void setDateFin(Calendar dateFin) {
-		this.dateFin = dateFin;
+	public void setDateCommande(Calendar dateCommande) {
+		this.dateCommande = dateCommande;
 	}
 
 	public int getQte() {
@@ -77,14 +62,6 @@ public class Commande {
 
 	public void setClient(Client client) {
 		this.client = client;
-	}
-
-	public HistoriqueStatutCmd getHistoriqueStatutCmd() {
-		return historiqueStatutCmd;
-	}
-
-	public void setHistoriqueStatutCmd(HistoriqueStatutCmd historiqueStatutCmd) {
-		this.historiqueStatutCmd = historiqueStatutCmd;
 	}
 
 	public Produit getProduit() {

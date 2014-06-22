@@ -2,9 +2,6 @@ package com.epsi.tpecommerce.dao;
 
 import com.epsi.tpecommerce.entity.StatutCmd;
 
-/**
- * Created by maxencegodeneche on 16/06/2014.
- */
 public class StatutCmdDao extends AbstractDao<StatutCmd, Integer> {
 
     public StatutCmdDao() {
@@ -15,5 +12,15 @@ public class StatutCmdDao extends AbstractDao<StatutCmd, Integer> {
         return this.find(StatutCmd.class, id);
     }
 
-
+    public void addStatutCmd(StatutCmd p_statutCmd){
+    	this.session.beginTransaction();
+    	
+    	int exRows = this.session.createSQLQuery(
+    			"CALL ADDSTATUTCMD(:nom)")
+    			.setString("nom", p_statutCmd.getNom())
+    			.executeUpdate();
+    	
+    	
+    	this.session.getTransaction().commit();
+    }
 }

@@ -3,6 +3,8 @@ package com.epsi.tpecommerce.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import java.util.Calendar;
@@ -19,8 +21,20 @@ public class HistoriqueStatutCmd {
 
     @Column(name="IdStatutCmd")
     private StatutCmd statut;
+    
+    @ManyToOne
+    @JoinColumn(name="Commande", referencedColumnName="idCommande")
+    private Commande commande;
 
-    public int getIdHistoStatutCmd() {
+    public Commande getCommande() {
+		return commande;
+	}
+
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
+
+	public int getIdHistoStatutCmd() {
         return idHistoStatutCmd;
     }
 

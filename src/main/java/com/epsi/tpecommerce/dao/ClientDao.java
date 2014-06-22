@@ -1,14 +1,13 @@
 package com.epsi.tpecommerce.dao;
 
 import com.epsi.tpecommerce.entity.Client;
-import java.util.List;
 
-import com.epsi.tpecommerce.entity.User;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.hibernate.Query;
 
-/**
- * Created by Maxence on 04/06/2014.
- */
 public class ClientDao extends AbstractDao<Client,Integer> {
 
     public ClientDao() {
@@ -17,14 +16,68 @@ public class ClientDao extends AbstractDao<Client,Integer> {
     public Client find(int id) {
         return this.find(Client.class, id);
     }
-    public Client findByLogin(String login) {
-        this.session.beginTransaction();
-        String queryString = "from CLIENT where login = :login";
-        Query query = this.session.createQuery(queryString);
-        query.setString("login", login);
-        Object queryResult = query.uniqueResult();
-        Client client = (Client)queryResult;
+
+    public void addClient(Client p_client) {
+    	this.session.beginTransaction();
+    	
+        int exRows = this.session.createSQLQuery(
+    			"CALL ADDCLIENT(:prenom, :nom, :email)")
+    			.setString("prenom", p_client.getPrenom())
+    			.setString("nom", p_client.getNom())
+    			.setString("email", p_client.getEmail())
+    			.executeUpdate();
+        
         this.session.getTransaction().commit();
-        return client;
+    }
+    
+    public Map<Client, Integer> getClientFideleNbCommandes(){
+    	this.session.beginTransaction();
+    	
+    	Query query = this.session.createSQLQuery(
+    			"CALL CLIENTFIDELENBCOMMANDES");
+    	
+    	Map<Client, Integer> clientsFideles = new HashMap<Client, Integer>();
+    	
+    	List<Object[]> resultQuery = (List<Object[]>)query.list();
+    	
+    	for(Object[] o : resultQuery) clientsFideles.put(this.find((Integer)o[0]), (Integer)o[1]);
+    	
+    	this.session.getTransaction().commit();
+    	
+    	return clientsFideles;
+    }
+    
+    public Map<Client, Integer> getClientFideleNbProduits(){
+    	this.session.beginTransaction();
+    	
+    	Query query = this.session.createSQLQuery(
+    			"CALL CLIENTFIDELENBPRODUITS");
+    	
+    	Map<Client, Integer> clientsFideles = new HashMap<Client, Integer>();
+    	
+    	List<Object[]> resultQuery = (List<Object[]>)query.list();
+    	
+    	for(Object[] o : resultQuery) clientsFideles.put(this.find((Integer)o[0]), (Integer)o[1]);
+    	
+    	this.session.getTransaction().commit();
+    	
+    	return clientsFideles;
+    }
+    
+    public Map<Client, Integer> getCommandeParClient(){
+    	this.session.beginTransaction();
+    	
+    	Query query = this.session.createSQLQuery(
+    			"SELECT F_NOMBRECMDPARCLIENT");
+    	
+    	Map<Client, Integer> commandeParClient = new HashMap<Client, Integer>();
+    	
+    	List<Object[]> resultQuery = (List<Object[]>)query.list();
+    	
+    	for(Object[] o : resultQuery) commandeParClient.put(this.find((Integer)o[0]), (Integer)o[1]);
+    	
+    	this.session.getTransaction().commit();
+    	
+    	return commandeParClient;
     }
 }
