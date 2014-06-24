@@ -25,6 +25,9 @@
         <module name="tpecommerce" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tpecommerce" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
