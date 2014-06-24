@@ -1,6 +1,5 @@
 package com.epsi.tpecommerce.dao;
 
-import com.epsi.tpecommerce.entity.StatutCmd;
 import com.epsi.tpecommerce.entity.Tva;
 
 public class TvaDao extends AbstractDao<Tva,Integer>{

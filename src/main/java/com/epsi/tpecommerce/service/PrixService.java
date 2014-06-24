@@ -14,4 +14,8 @@ public class PrixService {
 	public Prix find(int id) {
 		return prixDao.find(id);
 	}
+	
+	public void addPrix(Prix p_prix){
+		prixDao.addPrix(p_prix);
+	}
 }

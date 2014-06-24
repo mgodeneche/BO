@@ -14,4 +14,12 @@ public class ProduitService {
 	public Produit find(int id) {
 		return produitDao.find(id);
 	}
+	
+	public void addProduit(Produit p_produit){
+		produitDao.addProduit(p_produit);
+	}
+	
+	public void editProduit(Produit p_produit){
+		produitDao.editProduit(p_produit);
+	}
 }

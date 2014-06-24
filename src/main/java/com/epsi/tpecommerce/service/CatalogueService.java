@@ -10,4 +10,8 @@ public class CatalogueService {
 	public CatalogueService() {
 		catalogueDao = new CatalogueDao();
 	}
+	
+	public void addCatalogue(Catalogue p_catalogue){
+		catalogueDao.addCatalogue(p_catalogue);
+	}
 }

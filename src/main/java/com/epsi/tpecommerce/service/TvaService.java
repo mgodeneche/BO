@@ -14,4 +14,8 @@ public class TvaService {
 	public Tva find(int id) {
 		return tvaDao.find(id);
 	}
+	
+	public void addTva(Tva p_Tva){
+		tvaDao.addTva(p_Tva);
+	}
 }

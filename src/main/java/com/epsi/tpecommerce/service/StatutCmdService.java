@@ -14,4 +14,8 @@ public class StatutCmdService {
 	public StatutCmd find(int id) {
 		return statutCmdDao.find(id);
 	}
+	
+	public void addStatutCmd(StatutCmd p_statutCmd){
+		statutCmdDao.addStatutCmd(p_statutCmd);
+	}
 }

@@ -14,4 +14,8 @@ public class HistoStatutCmdService {
 	public HistoriqueStatutCmd find(int id) {
 		return histoStatutCmdDao.find(id);
 	}
+	
+	public void addHistoriqueStatutCmd(HistoriqueStatutCmd p_histo){
+		histoStatutCmdDao.addHistoriqueStatutCmd(p_histo);
+	}
 }

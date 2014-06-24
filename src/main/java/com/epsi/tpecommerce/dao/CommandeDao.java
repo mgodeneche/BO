@@ -46,7 +46,7 @@ public class CommandeDao extends AbstractDao<Commande,Integer>{
 		return nombreCommandes;
 	}
 	
-	public int getQuantiteMoyenneParCommande(){
+	public Integer getQuantiteMoyenneParCommande(){
 		this.session.beginTransaction();
 		
 		Integer qteMoyenne = (Integer)this.session.createSQLQuery(

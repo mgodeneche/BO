@@ -14,4 +14,8 @@ public class CategorieService {
 	public Categorie find(int id) {
 		return categorieDao.find(id);
 	}
+	
+	public void addCategorie(Categorie p_categorie){
+		categorieDao.addCategorie(p_categorie);
+	}
 }

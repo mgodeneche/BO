@@ -14,4 +14,8 @@ public class SousCategorieService {
 	public SousCategorie find(int id) {
 		return sousCategorieDao.find(id);
 	}
+	
+	public void addSousCategorie(SousCategorie p_sousCategorie){
+		sousCategorieDao.addSousCategorie(p_sousCategorie);
+	}
 }
