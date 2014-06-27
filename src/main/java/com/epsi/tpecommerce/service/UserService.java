@@ -1,9 +1,9 @@
 package com.epsi.tpecommerce.service;
 
+import java.util.List;
+
 import com.epsi.tpecommerce.dao.UserDao;
 import com.epsi.tpecommerce.entity.User;
-
-import java.util.List;
 
 public class UserService {
 	
@@ -27,6 +27,5 @@ public class UserService {
 	public List<User> getTwelveLastUsers(){
 		return userDao.getLastUsers(12);
 	}
-
 
 }

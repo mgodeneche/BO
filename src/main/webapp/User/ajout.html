@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
@@ -29,7 +29,7 @@
 <link rel="stylesheet" type="text/css" href="../css/mws-theme.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../css/themer.css" media="screen">
 
-<title>Ajout d'un nouveau client</title>
+<title>Titre</title>
 
 </head>
 <body>
@@ -255,7 +255,7 @@
                     	<span><i class="icon-plus"></i> Nouvel Utilisateur</span>
                     </div>
                     <div class="mws-panel-body no-padding">
-                    	<form id="mws-validate" class="mws-form" action="/userAdd" method="post">
+                    	<form id="mws-validate" class="mws-form" action="ajouter.php" method="post">
                     		<div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
 							<div class="mws-form-message warning" id="validate-warning" style="display:none;">
 								<ul>
@@ -277,19 +277,18 @@
                     					<input id="inputPrenom" type="text" class="small required" name="prenom">
                     				</div>
                     			</div>
-				<!--				<div class="mws-form-row">
+								<div class="mws-form-row">
                     				<label class="mws-form-label">Login : </label>
                     				<div class="mws-form-item">
                     					<input id="inputLogin" type="text" class="small required" name="login">
                     				</div>
-                    			</div> -->
+                    			</div>
 								<div class="mws-form-row">
                     				<label class="mws-form-label">Mail : </label>
                     				<div class="mws-form-item">
                     					<input id="inputMail" type="text" class="small required" name="mail">
                     				</div>
                     			</div>
-
                     		</div>
                     		<div class="mws-button-row">
                     			<input type="submit" value="Valider" class="btn btn-danger">

@@ -1,9 +1,10 @@
 package com.epsi.tpecommerce.dao;
 
-import com.epsi.tpecommerce.entity.User;
+import java.util.List;
+
 import org.hibernate.Query;
 
-import java.util.List;
+import com.epsi.tpecommerce.entity.User;
 
 
 public class UserDao extends AbstractDao<User, Integer>{
@@ -27,21 +28,8 @@ public class UserDao extends AbstractDao<User, Integer>{
         return user;
 	}
 
-    public User findByEmail(String email) {
-		this.session.beginTransaction();
-        String queryString = "from User where email = :email";
-        Query query = this.session.createQuery(queryString);
-        query.setString("email", email);
-        Object queryResult = query.uniqueResult();
-        User user = (User)queryResult;
-        this.session.getTransaction().commit();
-        return user;
-	}
-
 	@SuppressWarnings("unchecked")
 	public List<User> getLastUsers(int nbUsers) {
 		return session.createCriteria(User.class).setMaxResults(nbUsers).list();
 	}
-
-
 }

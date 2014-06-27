@@ -1,24 +1,25 @@
 package com.epsi.tpecommerce.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.Column;
 
 @Entity
 @Table(name="USERS")
 public class User {
 	
 	@Id
-	@Column(name="IdClient")
-    @GeneratedValue(strategy=GenerationType.AUTO,generator="SEQ_CLIENT")
-    @SequenceGenerator(name="SEQ_CLIENT",sequenceName="SEQ_CLIENT")
+	@Column(name="id")
 	private int id;
 	
-	@Column(name="prenom", nullable=false, length=250)
+	@Column(name="name", nullable=false, length=250)
 	private String name;
 
-	@Column(name="nom", nullable=false, length=250)
+	@Column(name="surname", nullable=false, length=250)
 	private String surname;
 	
-	@Column(name="email", nullable=false, unique=true)
+	@Column(name="login", nullable=false, unique=true)
 	private String login;
 	
 	@Column(name="password")

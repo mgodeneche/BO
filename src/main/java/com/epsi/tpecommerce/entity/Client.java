@@ -1,15 +1,15 @@
 package com.epsi.tpecommerce.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.Column;
 
 @Entity
 @Table(name="CLIENT")
 public class Client {
-
     @Id
     @Column(name="idClient")
-    @GeneratedValue(strategy=GenerationType.AUTO,generator="SEQ_CLIENT")
-    @SequenceGenerator(name="SEQ_CLIENT",sequenceName="SEQ_CLIENT")
     private int idClient;
 
     @Column(name="prenom", nullable=false, length=250)
@@ -52,11 +52,5 @@ public class Client {
 
     public void setIdClient(int idClient) {
         this.idClient = idClient;
-    }
-
-    public Client(String prenom, String nom, String email) {
-        this.prenom = prenom;
-        this.nom = nom;
-        this.email = email;
     }
 }
